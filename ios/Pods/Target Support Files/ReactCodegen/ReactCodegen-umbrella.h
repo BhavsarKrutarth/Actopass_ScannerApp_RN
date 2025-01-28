@@ -28,6 +28,8 @@
 #import "rnasyncstorageJSI.h"
 #import "rngesturehandler_codegen/rngesturehandler_codegen.h"
 #import "rngesturehandler_codegenJSI.h"
+#import "rnreanimated/rnreanimated.h"
+#import "rnreanimatedJSI.h"
 #import "safeareacontext/safeareacontext.h"
 #import "safeareacontextJSI.h"
 

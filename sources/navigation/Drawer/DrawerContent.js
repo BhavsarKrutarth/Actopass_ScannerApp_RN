@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { FlatList, StyleSheet, Switch, View } from 'react-native';
-import { useRNStyles, useTheme } from '../../Hooks';
-import { RNText } from '../../Common';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { DummyData } from '../../Utils';
-import { useSelector } from 'react-redux';
+import React, { useState } from "react";
+import { FlatList, StyleSheet, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useSelector } from "react-redux";
+import { useTheme } from "@react-navigation/native";
+import { RNText } from "../../common";
+import { DummyData } from "../../Utils";
 
 const DrawerContent = ({}) => {
   const styles = useStyles();
