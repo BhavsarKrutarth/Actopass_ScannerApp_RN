@@ -1,6 +1,6 @@
 import React from 'react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
-import { Colors } from '../Theme';
+import { Colors } from '../theme';
 import RNStyles from './RNStyles';
 const RNLoader = ({ visible, style, color, size }) => {
   return visible ? (
