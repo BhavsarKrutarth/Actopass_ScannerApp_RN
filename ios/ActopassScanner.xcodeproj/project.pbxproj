@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		012ED3FC73E34B2BBAE346AF /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7726F7911BC94E2B84D387FB /* Poppins-Light.ttf */; };
-		025F40CD324C2D547D3E124F /* libPods-ActopassScanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B187F2765052F610272BEA93 /* libPods-ActopassScanner.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		179027F450EC4141863E4D41 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBDB32FD04164AB3A04117C2 /* Poppins-Black.ttf */; };
 		24FBB2BB892E470D96DEAD42 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 513BAE29B4664293BA195401 /* Poppins-Thin.ttf */; };
 		4894104EF2A0483A94D6CC31 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 950299E44F7A4B44B8323FCE /* Poppins-Medium.ttf */; };
 		6A57586F8C2D468BB849DF53 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39711C8AAA174DC386F66B0E /* Poppins-Bold.ttf */; };
+		7614F8FEE9FEF12FB29FDA18 /* libPods-ActopassScanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDB5BA7E7F8652B9EF8F519 /* libPods-ActopassScanner.a */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8C5D9D3817F446A39CF17A94 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F57155B6732F4D4E8F326A6D /* Poppins-SemiBold.ttf */; };
@@ -32,16 +32,16 @@
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = ActopassScanner/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		293C8ED23BAA4F85959FD318 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraBold.ttf"; path = "../sources/assets/fonts/Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
 		39711C8AAA174DC386F66B0E /* Poppins-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Bold.ttf"; path = "../sources/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
-		3EB37BDBFB9618E46D932EC8 /* Pods-ActopassScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActopassScanner.release.xcconfig"; path = "Target Support Files/Pods-ActopassScanner/Pods-ActopassScanner.release.xcconfig"; sourceTree = "<group>"; };
 		3FFF063C53ED4F00B31B450C /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../sources/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
-		4725D75B6B603CE10FEED84B /* Pods-ActopassScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActopassScanner.debug.xcconfig"; path = "Target Support Files/Pods-ActopassScanner/Pods-ActopassScanner.debug.xcconfig"; sourceTree = "<group>"; };
 		513BAE29B4664293BA195401 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Thin.ttf"; path = "../sources/assets/fonts/Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		5D186719011328BD7E5090A5 /* Pods-ActopassScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActopassScanner.release.xcconfig"; path = "Target Support Files/Pods-ActopassScanner/Pods-ActopassScanner.release.xcconfig"; sourceTree = "<group>"; };
+		61425E8B906AB3B318350B3B /* Pods-ActopassScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActopassScanner.debug.xcconfig"; path = "Target Support Files/Pods-ActopassScanner/Pods-ActopassScanner.debug.xcconfig"; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ActopassScanner/AppDelegate.swift; sourceTree = "<group>"; };
 		7726F7911BC94E2B84D387FB /* Poppins-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Light.ttf"; path = "../sources/assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ActopassScanner/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		950299E44F7A4B44B8323FCE /* Poppins-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Medium.ttf"; path = "../sources/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
-		B187F2765052F610272BEA93 /* libPods-ActopassScanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ActopassScanner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B672158D239E4A45ACA4E2B6 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Italic.ttf"; path = "../sources/assets/fonts/Poppins-Italic.ttf"; sourceTree = "<group>"; };
+		CFDB5BA7E7F8652B9EF8F519 /* libPods-ActopassScanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ActopassScanner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBDB32FD04164AB3A04117C2 /* Poppins-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Black.ttf"; path = "../sources/assets/fonts/Poppins-Black.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F57155B6732F4D4E8F326A6D /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../sources/assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				025F40CD324C2D547D3E124F /* libPods-ActopassScanner.a in Frameworks */,
+				7614F8FEE9FEF12FB29FDA18 /* libPods-ActopassScanner.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				B187F2765052F610272BEA93 /* libPods-ActopassScanner.a */,
+				CFDB5BA7E7F8652B9EF8F519 /* libPods-ActopassScanner.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -131,8 +131,8 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4725D75B6B603CE10FEED84B /* Pods-ActopassScanner.debug.xcconfig */,
-				3EB37BDBFB9618E46D932EC8 /* Pods-ActopassScanner.release.xcconfig */,
+				61425E8B906AB3B318350B3B /* Pods-ActopassScanner.debug.xcconfig */,
+				5D186719011328BD7E5090A5 /* Pods-ActopassScanner.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -144,13 +144,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ActopassScanner" */;
 			buildPhases = (
-				E0AF7FDFD7B1E667565726F2 /* [CP] Check Pods Manifest.lock */,
+				9914B040B92A0E3272971DCA /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				5DB42494C8EB9B4C992F878B /* [CP] Embed Pods Frameworks */,
-				37AD60611DDB532FABFEE3AF /* [CP] Copy Pods Resources */,
+				196FFF31C6B1AF3F22ED5005 /* [CP] Embed Pods Frameworks */,
+				48516207C95E6FECA3D66C7F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,24 +232,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		37AD60611DDB532FABFEE3AF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ActopassScanner/Pods-ActopassScanner-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ActopassScanner/Pods-ActopassScanner-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ActopassScanner/Pods-ActopassScanner-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5DB42494C8EB9B4C992F878B /* [CP] Embed Pods Frameworks */ = {
+		196FFF31C6B1AF3F22ED5005 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -266,7 +249,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ActopassScanner/Pods-ActopassScanner-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E0AF7FDFD7B1E667565726F2 /* [CP] Check Pods Manifest.lock */ = {
+		48516207C95E6FECA3D66C7F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ActopassScanner/Pods-ActopassScanner-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ActopassScanner/Pods-ActopassScanner-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ActopassScanner/Pods-ActopassScanner-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9914B040B92A0E3272971DCA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -304,7 +304,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4725D75B6B603CE10FEED84B /* Pods-ActopassScanner.debug.xcconfig */;
+			baseConfigurationReference = 61425E8B906AB3B318350B3B /* Pods-ActopassScanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -332,7 +332,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EB37BDBFB9618E46D932EC8 /* Pods-ActopassScanner.release.xcconfig */;
+			baseConfigurationReference = 5D186719011328BD7E5090A5 /* Pods-ActopassScanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

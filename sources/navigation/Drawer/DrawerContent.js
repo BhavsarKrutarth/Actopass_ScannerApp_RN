@@ -2,7 +2,8 @@ import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Images } from "../../constants";
-import { Colors } from "../../theme";
+import { Colors, hp, wp } from "../../theme";
+import { RNContainer, RNImage, RNStyles, RNText } from "../../common";
 
 const DrawerContent = (props) => {
   const navigation = useNavigation();
@@ -12,14 +13,14 @@ const DrawerContent = (props) => {
   };
 
   return (
-    <View style={styles.container}>
+    <RNContainer style={{ gap: hp(5) }}>
       <View style={styles.profileSection}>
-        <Image
+        <RNImage
           source={{ uri: "https://via.placeholder.com/100" }}
           style={styles.profileImage}
         />
-        <Text style={styles.userName}>John Doe</Text>
-        <Text style={styles.userEmail}>johndoe@example.com</Text>
+        <RNText style={styles.userName}>John Doe</RNText>
+        <RNText style={styles.userEmail}>johndoe@example.com</RNText>
       </View>
 
       <View style={styles.navLinks}>
@@ -27,44 +28,39 @@ const DrawerContent = (props) => {
           style={styles.navItem}
           onPress={() => navigation.navigate("Scan")}
         >
-          <Image source={Images.Scan} style={styles.navIcon} />
-          <Text style={styles.navText}>Scan</Text>
+          <RNImage source={Images.Scan} style={styles.navIcon} />
+          <RNText style={styles.navText}>Scan</RNText>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.navItem}
           onPress={() => navigation.navigate("History")}
         >
-          <Image source={Images.History} style={styles.navIcon} />
-          <Text style={styles.navText}>History</Text>
+          <RNImage source={Images.History} style={styles.navIcon} />
+          <RNText style={styles.navText}>History</RNText>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.navItem}
           onPress={() => navigation.navigate("Profile")}
         >
-          <Image source={Images.Profile} style={styles.navIcon} />
-          <Text style={styles.navText}>Profile</Text>
+          <RNImage source={Images.Profile} style={styles.navIcon} />
+          <RNText style={styles.navText}>Profile</RNText>
         </TouchableOpacity>
       </View>
 
       {/* Logout Button */}
       <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
-        <Image source={Images.Signout} style={styles.navIcon} />
-        <Text style={styles.logoutText}>Logout</Text>
+        <RNImage source={Images.Signout} style={styles.navIcon} />
+        <RNText style={styles.logoutText}>Logout</RNText>
       </TouchableOpacity>
-    </View>
+    </RNContainer>
   );
 };
 
 export default DrawerContent;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-  },
   profileSection: {
     alignItems: "center",
-    marginBottom: 20,
     backgroundColor: Colors.Purple,
   },
   profileImage: {
@@ -73,47 +69,21 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     marginBottom: 10,
   },
-  userName: {
-    fontSize: 18,
-    fontWeight: "bold",
-  },
-  userEmail: {
-    fontSize: 14,
-    color: "gray",
-  },
   navLinks: {
-    marginTop: 20,
+    paddingHorizontal: wp(5),
+    gap: hp(4),
   },
   navItem: {
-    flexDirection: "row",
-    alignItems: "center",
-    paddingVertical: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: "#f0f0f0",
+    ...RNStyles.flexRow,
   },
   navIcon: {
-    width: 24,
-    height: 24,
-    marginRight: 10,
-  },
-  navText: {
-    fontSize: 16,
+    width: wp(5),
+    height: wp(5),
+    tintColor: Colors.Black,
   },
   logoutButton: {
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#ff5252",
-    padding: 15,
-    borderRadius: 5,
+    ...RNStyles.flexRow,
+    gap: wp(5),
     marginTop: "auto",
   },
-  logoutText: {
-    color: "#fff",
-    fontSize: 16,
-    marginLeft: 10,
-  },
 });
-
-{
-  /* <Ionicons name="scan-outline" size={20} color="#000" />; */
-}
