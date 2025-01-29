@@ -14,5 +14,4 @@ const Colors = {
   Primary: "#0275d8",
   Placeholder: "#9A9A9A",
 };
-
 export default Colors;

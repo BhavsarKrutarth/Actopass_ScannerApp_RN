@@ -1,119 +1,154 @@
-import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
+import React, { useState } from "react";
+import { View, TouchableOpacity, StyleSheet, SafeAreaView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Images } from "../../constants";
-import { Colors } from "../../theme";
+import { Colors, FontFamily, FontSize, hp, normalize, wp } from "../../theme";
+import { RNContainer, RNImage, RNText, RNStyles } from "../../common";
 
-const DrawerContent = (props) => {
+const DrawerContent = () => {
+  const [selectedPage, setSelectedPage] = useState("Scan");
   const navigation = useNavigation();
 
   const handleLogout = () => {
     console.log("User logged out");
   };
 
+  const navLinks = [
+    { name: "Scan", icon: Images.Scan },
+    { name: "History", icon: Images.History },
+    { name: "Profile", icon: Images.Profile },
+  ];
+
+  const handleNavPress = (page) => {
+    setSelectedPage(page);
+    navigation.navigate(page);
+  };
+
   return (
-    <View style={styles.container}>
-      <View style={styles.profileSection}>
-        <Image
-          source={{ uri: "https://via.placeholder.com/100" }}
-          style={styles.profileImage}
-        />
-        <Text style={styles.userName}>John Doe</Text>
-        <Text style={styles.userEmail}>johndoe@example.com</Text>
+    <RNContainer style={{ gap: hp(5), backgroundColor: Colors.LightGrey }}>
+      <View style={{ backgroundColor: Colors.Purple }}>
+        <SafeAreaView style={{ gap: hp(5), margin: wp(2) }}>
+          <View style={styles.titleHeader}>
+            <RNImage
+              source={Images.Logo}
+              style={{ width: wp(10), height: wp(10) }}
+            />
+            <RNText
+              children={"ACTOPASS"}
+              color={Colors.White}
+              size={FontSize.font14}
+              family={FontFamily.Regular}
+            />
+          </View>
+          <View style={styles.profileSection}>
+            <RNImage
+              source={require("../../assets/images/user.jpeg")}
+              resizeMode={"cover"}
+              style={{
+                width: wp(12),
+                height: wp(12),
+                borderRadius: normalize(30),
+              }}
+            />
+            <View style={{ gap: hp(0.5) }}>
+              <RNText
+                children={"name"}
+                size={FontSize.font12}
+                color={Colors.White}
+                family={FontFamily.Regular}
+              />
+              <RNText
+                children={"surat"}
+                size={FontSize.font18}
+                color={Colors.White}
+                family={FontFamily.SemiBold}
+              />
+            </View>
+          </View>
+        </SafeAreaView>
       </View>
 
       <View style={styles.navLinks}>
-        <TouchableOpacity
-          style={styles.navItem}
-          onPress={() => navigation.navigate("Scan")}
-        >
-          <Image source={Images.Scan} style={styles.navIcon} />
-          <Text style={styles.navText}>Scan</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.navItem}
-          onPress={() => navigation.navigate("History")}
-        >
-          <Image source={Images.History} style={styles.navIcon} />
-          <Text style={styles.navText}>History</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.navItem}
-          onPress={() => navigation.navigate("Profile")}
-        >
-          <Image source={Images.Profile} style={styles.navIcon} />
-          <Text style={styles.navText}>Profile</Text>
-        </TouchableOpacity>
+        {navLinks.map((item, index) => (
+          <TouchableOpacity
+            key={index}
+            style={[
+              { ...RNStyles.flexRow, gap: wp(5), padding: wp(3) },
+              selectedPage === item.name && styles.selectedNavItem,
+            ]}
+            onPress={() => handleNavPress(item.name)}
+          >
+            <RNImage
+              source={item.icon}
+              style={[
+                styles.navIcon,
+                selectedPage === item.name && { tintColor: Colors.White },
+              ]}
+            />
+            <RNText
+              size={FontSize.font17}
+              color={selectedPage === item.name ? Colors.White : Colors.Grey}
+              family={FontFamily.Medium}
+            >
+              {item.name}
+            </RNText>
+          </TouchableOpacity>
+        ))}
       </View>
 
-      {/* Logout Button */}
       <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
-        <Image source={Images.Signout} style={styles.navIcon} />
-        <Text style={styles.logoutText}>Logout</Text>
+        <RNImage source={Images.Signout} style={styles.navIcon} />
+        <RNText
+          size={FontSize.font17}
+          color={Colors.Grey}
+          family={FontFamily.Medium}
+        >
+          Sign Out
+        </RNText>
       </TouchableOpacity>
-    </View>
+    </RNContainer>
   );
 };
 
 export default DrawerContent;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
+  titleHeader: {
+    ...RNStyles.flexRow,
+    gap: wp(1),
+    borderBottomWidth: 0.4,
+    borderColor: "#C997FC",
+    paddingVertical: hp(1),
   },
-  profileSection: {
-    alignItems: "center",
-    marginBottom: 20,
-    backgroundColor: Colors.Purple,
-  },
+  profileSection: { ...RNStyles.flexRow, gap: wp(2), padding: wp(3) },
   profileImage: {
     width: 100,
     height: 100,
     borderRadius: 50,
     marginBottom: 10,
   },
-  userName: {
-    fontSize: 18,
-    fontWeight: "bold",
-  },
-  userEmail: {
-    fontSize: 14,
-    color: "gray",
-  },
   navLinks: {
-    marginTop: 20,
+    paddingHorizontal: wp(3),
+    gap: hp(2),
   },
-  navItem: {
-    flexDirection: "row",
-    alignItems: "center",
-    paddingVertical: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: "#f0f0f0",
+  selectedNavItem: {
+    backgroundColor: Colors.Purple,
+    borderRadius: wp(2),
   },
   navIcon: {
-    width: 24,
-    height: 24,
-    marginRight: 10,
+    width: wp(6),
+    height: wp(6),
+    tintColor: Colors.Grey,
   },
-  navText: {
-    fontSize: 16,
-  },
+  selectedIcon: {},
   logoutButton: {
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#ff5252",
-    padding: 15,
-    borderRadius: 5,
+    ...RNStyles.flexRow,
+    gap: wp(5),
     marginTop: "auto",
-  },
-  logoutText: {
-    color: "#fff",
-    fontSize: 16,
-    marginLeft: 10,
+    paddingBottom: hp(4),
+    paddingTop: hp(3),
+    marginHorizontal: wp(5),
+    borderTopWidth: 0.5,
+    borderTopColor: "#CCC",
   },
 });
-
-{
-  /* <Ionicons name="scan-outline" size={20} color="#000" />; */
-}
