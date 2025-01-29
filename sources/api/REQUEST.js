@@ -1,6 +1,5 @@
-// import Axios from 'axios';
-import { Functions } from '../Utils';
-import URL from './URL';
+import { Functions } from "../utils";
+import URL from "./URL";
 
 const REQUEST = async ({
   Method,
@@ -33,8 +32,8 @@ const REQUEST = async ({
 };
 const Header = (NeedToken, Token, IsformData) => {
   let apiHeaders = {
-    Accept: '*/*',
-    'Content-Type': IsformData ? 'multipart/form-data' : 'application/json',
+    Accept: "*/*",
+    "Content-Type": IsformData ? "multipart/form-data" : "application/json",
   };
   if (NeedToken) {
     apiHeaders = { ...apiHeaders, Authorization: `Bearer ${Token}` };

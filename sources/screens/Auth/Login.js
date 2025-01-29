@@ -4,14 +4,34 @@ import { RNButton, RNContainer, RNInput, RNText } from "../../common";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Colors, FontFamily, FontSize, hp, wp } from "../../theme";
 import { Images } from "../../constants";
+import { loginUser } from "../../api/Api";
+import { useDispatch } from "react-redux";
+import {
+  onAuthChange,
+  setAsyncStorageValue,
+} from "../../redux/Reducers/AuthReducers";
+import { Functions } from "../../utils";
 
 const Login = () => {
   const [Input, setInput] = useState({
     Id: "",
     Password: "",
-    OTP: "",
   });
   const [toggle, settoggle] = useState(true);
+  const dispatch = useDispatch();
+
+  const handleLogin = async () => {
+    try {
+      const response = loginUser(Input.Id, Input.Password);
+      if (response) {
+        dispatch(onAuthChange(true));
+        await Functions.setUserData(response);
+        dispatch(setAsyncStorageValue(response));
+      }
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
 
   return (
     <RNContainer>
@@ -66,8 +86,10 @@ const Login = () => {
               Tipadding={10}
               Tiplaceholder="Enter Psssword"
               Tiflex={1}
-              value={Input.Passwordd}
-              onchangetext={(v) => setInput((prev) => ({ ...prev, Password: v }))}
+              value={Input.Password}
+              onchangetext={(v) =>
+                setInput((prev) => ({ ...prev, Password: v }))
+              }
               securetextentry={toggle}
               onPress={() => settoggle(!toggle)}
             />
@@ -75,11 +97,12 @@ const Login = () => {
         </View>
         <View style={style.flex3}>
           <RNButton
-            style={{ 
-              marginHorizontal: wp(0), 
+            onPress={() => handleLogin()}
+            style={{
+              marginHorizontal: wp(0),
               backgroundColor: Colors.Purple,
               borderRadius: wp(2),
-              marginVertical: hp(0)
+              marginVertical: hp(0),
             }}
             title={"Login"}
           ></RNButton>
@@ -140,7 +163,7 @@ const style = StyleSheet.create({
   flex3: {
     flex: 1,
     // backgroundColor: "blue",
-    justifyContent:"center"
+    justifyContent: "center",
   },
   buttontext: {
     color: Colors.White,

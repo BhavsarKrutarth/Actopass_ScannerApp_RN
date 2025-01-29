@@ -4,22 +4,27 @@ import { useNavigation } from "@react-navigation/native";
 import { Images } from "../../constants";
 import { Colors, FontFamily, FontSize, hp, normalize, wp } from "../../theme";
 import { RNContainer, RNImage, RNText, RNStyles } from "../../common";
+import { useSelector } from "react-redux";
 
 const DrawerContent = () => {
-  const [selectedPage, setSelectedPage] = useState("Scan");
+  const [selectedPage, setSelectedPage] = useState("Scanner");
   const navigation = useNavigation();
+  const { AsyncValue } = useSelector((state) => state.Auth);
+  console.log("AsyncValue", AsyncValue);
 
   const handleLogout = () => {
     console.log("User logged out");
   };
 
   const navLinks = [
-    { name: "Scan", icon: Images.Scan },
+    { name: "Scanner", icon: Images.Scan },
     { name: "History", icon: Images.History },
     { name: "Profile", icon: Images.Profile },
   ];
 
   const handleNavPress = (page) => {
+    console.log("onpress");
+
     setSelectedPage(page);
     navigation.navigate(page);
   };
