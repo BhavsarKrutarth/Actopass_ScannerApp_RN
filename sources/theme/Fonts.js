@@ -37,15 +37,15 @@ const FontSize = {
   font40: normalize(40),
 };
 const FontFamily = {
-  Black: 'Poppins-Black',
-  Bold: 'Poppins-Bold',
-  ExtraBold: 'Poppins-ExtraBold',
-  ExtraLight: 'Poppins-ExtraLight',
-  Italic: 'Poppins-Italic',
-  Light: 'Poppins-Light',
-  Medium: 'Poppins-Medium',
-  Regular: 'Poppins-Regular',
-  SemiBold: 'Poppins-SemiBold',
-  Thin: 'Poppins-Thin',
+  Black: "LexendDeca-Black",
+  Bold: "LexendDeca-Bold",
+  ExtraBold: "LexendDeca-ExtraBold",
+  ExtraLight: "LexendDeca-ExtraLight",
+  Italic: "LexendDeca-Italic",
+  Light: "LexendDeca-Light",
+  Medium: "LexendDeca-Medium",
+  Regular: "LexendDeca-Regular",
+  SemiBold: "LexendDeca-SemiBold",
+  Thin: "LexendDeca-Thin",
 };
 export { FontSize, FontFamily };
