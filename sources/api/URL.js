@@ -1,4 +1,4 @@
-const BASE_URL = '';
+const BASE_URL = "https://actopassliveapi.actopass.co.in";
 
 const URL = {
   BaseUrl: BASE_URL,
