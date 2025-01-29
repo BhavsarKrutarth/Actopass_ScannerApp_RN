@@ -18,6 +18,7 @@ const RNText = ({
   pVertical,
   spacing,
   onPress,
+  mTop,
   ...restProps
 }) => {
   const TextStyles = {
@@ -33,6 +34,7 @@ const RNText = ({
     paddingHorizontal: pHorizontal,
     paddingVertical: pVertical,
     letterSpacing: spacing,
+    marginTop:mTop
   };
   return (
     <Text

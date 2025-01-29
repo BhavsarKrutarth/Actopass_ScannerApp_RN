@@ -13,5 +13,6 @@ const Colors = {
   Purple: "#942FFA",
   Primary: "#0275d8",
   Placeholder: "#9A9A9A",
+  lable :'#A8A8A8',
 };
 export default Colors;

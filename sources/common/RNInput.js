@@ -1,68 +1,74 @@
 import React from 'react';
-import { StyleSheet, TextInput } from 'react-native';
+import { StyleSheet, TextInput, TouchableOpacity, View } from 'react-native';
 import { Colors, FontFamily, FontSize, hp, wp } from "../theme";
-const RNInput = React.forwardRef((props, ref) => {
-  const {
-    placeholder,
-    placeholderTextColor,
-    style,
-    onChangeText,
-    onSubmitEditing,
-    onEndEditing,
-    onFocus,
-    onBlur,
-    keyboardType,
-    returnKeyType,
-    secureTextEntry,
-    value,
-    textAlign,
-    maxLength,
-    onChange,
-    onKeyPress,
-    editable,
-    multiline,
-    numberOfLines,
-    spellCheck,
-  } = props;
-  return (
-    <TextInput
-      ref={ref}
-      editable={editable}
-      placeholder={placeholder}
-      placeholderTextColor={placeholderTextColor ?? Colors.Placeholder}
-      style={[styles.input, style]}
-      onKeyPress={onKeyPress}
-      onChange={onChange}
-      onChangeText={onChangeText}
-      onSubmitEditing={onSubmitEditing}
-      onEndEditing={onEndEditing}
-      onFocus={onFocus}
-      onBlur={onBlur}
-      keyboardType={keyboardType || 'default'}
-      returnKeyType={returnKeyType || 'next'}
-      secureTextEntry={secureTextEntry || false}
-      value={value}
-      textAlign={textAlign || 'left'}
-      textAlignVertical={'center'}
-      autoCorrect={false}
-      spellCheck={spellCheck ?? true}
-      autoCapitalize={'none'}
-      maxLength={maxLength}
-      multiline={multiline}
-      numberOfLines={numberOfLines}
-    />
-  );
-});
+import RNImage from './RNImage';
 
-const styles = StyleSheet.create({
-  input: {
-    // flex: 1,
-    paddingHorizontal: wp(3),
-    paddingVertical: hp(1),
-    marginVertical: hp(1),
-    fontSize: FontSize.font16,
-    fontFamily: FontFamily.Regular,
-    color: Colors.Black,
+const RNInput = ({
+  Lefticon,
+  Righticon,
+  Containerstyle,
+  Tiheight,
+  Tiwidth,
+  Tipadding,
+  Tiflex,
+  Tifontsize,
+  Tiplaceholder,
+  Tiplacrholdertextcolor,
+  Tifontfamily,
+  Tinewstyle,
+  onPress,
+  value,
+  onchangetext,
+  securetextentry,
+}) => {
+  const Tistyle = {
+    height: Tiheight ?? 30,
+    padding: Tipadding ?? 10,
+    flex: Tiflex ?? 1,
+    fontSize: Tifontsize ?? FontSize.font16,
+    FontFamily: Tifontfamily ?? FontFamily.Regular,
+    width:Tiwidth,
+    // backgroundColor:'pink'
+  };
+
+  const Tiprops = {
+    placeholder: Tiplaceholder ?? '',
+    placeholderTextColor: Tiplacrholdertextcolor ?? Colors.Placeholder,
+  };
+
+  return (
+    <View style={[style.container, Containerstyle]}>
+      {Lefticon ? 
+      <RNImage source={Lefticon} style={style.imagestyle} tintColor={Colors.Black}/> : null}
+      <TextInput
+        style={[Tistyle, Tinewstyle]}
+        placeholderTextColor={Tiprops.placeholderTextColor}
+        placeholder={Tiprops.placeholder}
+        value={value}
+        onChangeText={onchangetext}
+        secureTextEntry={securetextentry}
+      />
+      {Righticon ? (
+        <TouchableOpacity onPress={onPress}>
+          <RNImage source={Righticon} style={style.imagestyle} tintColor={Colors.Black}/>
+        </TouchableOpacity>
+      ) : null}
+    </View>
+  );
+};
+
+const style = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderColor: Colors.bordercolor,
+    paddingHorizontal: wp(1.7),
+    // backgroundColor:'red'
+  },
+  imagestyle: {
+    height: wp(5),
+    width: wp(5),
   },
 });
 export default RNInput;
