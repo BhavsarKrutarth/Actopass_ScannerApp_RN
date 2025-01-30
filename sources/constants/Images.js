@@ -12,6 +12,7 @@ const Images = {
   Scan: require(ImagePath + "scan" + png),
   Signout: require(ImagePath + "signout" + png),
   Profile: require(ImagePath + "profile" + png),
+  drawer: require(ImagePath + "drawer" + png)
 };
 
 export default Images;
