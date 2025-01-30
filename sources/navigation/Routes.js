@@ -25,7 +25,7 @@ const Routes = () => {
 
   const userData = async () => {
     const data = await Functions.getUserData();
-    console.log("data", data);
+    console.log("Stored User Data:", data.AuthorizationKey);
 
     if (data) {
       dispatch(onAuthChange(true));

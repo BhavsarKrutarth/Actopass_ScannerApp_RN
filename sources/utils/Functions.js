@@ -24,7 +24,7 @@ const getAppData = async () => {
 
 const getUserData = async () => {
   const value = await AsyncStorage.getItem("user");
-  return JSON.parse(value);
+  return value ? JSON.parse(value) : null;
 };
 
 const setUserData = async (data) => {

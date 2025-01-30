@@ -3,10 +3,13 @@ const png = ".png";
 
 const Images = {
   Back: require(ImagePath + "Back" + png),
+  Call: require(ImagePath + "call" + png),
   Eye: require(ImagePath + "eye" + png),
   Eyeoff: require(ImagePath + "eyeoff" + png),
-  Frame: require(ImagePath + "Frame" + png),
+  User: require(ImagePath + "user" + png),
   History: require(ImagePath + "history" + png),
+  Mail: require(ImagePath + "mail" + png),
+  Nodata: require(ImagePath + "nodata" + png),
   Lock: require(ImagePath + "lock" + png),
   Logo: require(ImagePath + "logo" + png),
   Scan: require(ImagePath + "scan" + png),
