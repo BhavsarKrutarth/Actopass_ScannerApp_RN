@@ -22,11 +22,10 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const response = loginUser(Input.Id, Input.Password);
-      console.log("resposne Data=", response);
+      const response = await loginUser(Input.Id, Input.Password);
       if (response) {
-        dispatch(onAuthChange(true));
         await Functions.setUserData(response);
+        dispatch(onAuthChange(true));
         dispatch(setAsyncStorageValue(response));
       }
     } catch (error) {
@@ -44,7 +43,7 @@ const Login = () => {
       >
         <View style={style.flex1}>
           <View style={style.imageview}>
-            <Image source={Images.Frame} style={style.manimage} />
+            <Image source={Images.User} style={style.manimage} />
           </View>
           <View style={style.textview}>
             <RNText
@@ -67,7 +66,7 @@ const Login = () => {
               Containerstyle={{
                 borderColor: Colors.lable,
               }}
-              Lefticon={Images.Frame}
+              Lefticon={Images.User}
               Tiheight={50}
               Tipadding={10}
               Tiplaceholder="Enter Username"

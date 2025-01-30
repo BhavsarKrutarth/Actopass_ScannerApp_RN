@@ -14,7 +14,7 @@ const DrawerContent = () => {
   const [selectedPage, setSelectedPage] = useState("Scanner");
   const navigation = useNavigation();
   const dispatch = useDispatch();
-
+  
   const handleLogout = () => {
     AsyncStorage.clear();
     dispatch(onAuthChange(false));
