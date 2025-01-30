@@ -14,8 +14,8 @@ import { Functions } from "../../utils";
 
 const Login = () => {
   const [Input, setInput] = useState({
-    Id: "",
-    Password: "",
+    Id: "SCL-0001",
+    Password: "96CE8347",
   });
   const [toggle, settoggle] = useState(true);
   const dispatch = useDispatch();
@@ -23,6 +23,7 @@ const Login = () => {
   const handleLogin = async () => {
     try {
       const response = loginUser(Input.Id, Input.Password);
+      console.log("resposne Data=", response);
       if (response) {
         dispatch(onAuthChange(true));
         await Functions.setUserData(response);

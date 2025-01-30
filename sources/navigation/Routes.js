@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavConfigs, NavRoutes } from "./index";
-import { Login } from "../screens";
+import { History, Login, Profile, Scan } from "../screens";
 import Index from "./Drawer";
 import { useDispatch, useSelector } from "react-redux";
 import { RNLoader } from "../common";
@@ -25,7 +25,8 @@ const Routes = () => {
 
   const userData = async () => {
     const data = await Functions.getUserData();
-    console.log(data);
+    console.log("data", data);
+
     if (data) {
       dispatch(onAuthChange(true));
       dispatch(setAsyncStorageValue(data));
@@ -44,9 +45,14 @@ const Routes = () => {
     <NavigationContainer>
       <Stack.Navigator screenOptions={NavConfigs.screenOptions}>
         {isAuth ? (
-          <Stack.Screen name={"Index"} component={Index} />
+          <>
+            <Stack.Screen name="Index" component={Index} />
+            <Stack.Screen name="Scanner" component={Scan} />
+            <Stack.Screen name="History" component={History} />
+            <Stack.Screen name="Profile" component={Profile} />
+          </>
         ) : (
-          <Stack.Screen name={"Login"} component={Login} />
+          <Stack.Screen name="Login" component={Login} />
         )}
       </Stack.Navigator>
     </NavigationContainer>
