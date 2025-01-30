@@ -69,7 +69,7 @@ export const userProfile = async (ScannerLoginId) => {
   }
 };
 
-export const History = async (ScannerLoginId) => {
+export const HistoryData = async (ScannerLoginId) => {
   try {
     const response = await FetchMethod.GET({
       EndPoint: `SacnneTicket/TicketHistory/${ScannerLoginId}`,

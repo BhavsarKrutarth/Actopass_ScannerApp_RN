@@ -1,14 +1,14 @@
-import REQUEST from './REQUEST';
+import REQUEST from "./REQUEST";
 const GET = async ({ EndPoint, NeedToken }) => {
   return await REQUEST({
-    Method: 'GET',
+    Method: "GET",
     EndPoint,
     NeedToken,
   });
 };
 const POST = async ({ EndPoint, Params, NeedToken }) => {
   return await REQUEST({
-    Method: 'POST',
+    Method: "POST",
     Params,
     EndPoint,
     NeedToken,
@@ -16,7 +16,7 @@ const POST = async ({ EndPoint, Params, NeedToken }) => {
 };
 const PUT = async ({ EndPoint, Params, NeedToken }) => {
   return await REQUEST({
-    Method: 'PUT',
+    Method: "PUT",
     Params,
     EndPoint,
     NeedToken,
@@ -24,16 +24,15 @@ const PUT = async ({ EndPoint, Params, NeedToken }) => {
 };
 const DELETE = async ({ EndPoint, Params, NeedToken }) => {
   return await REQUEST({
-    Method: 'DELETE',
+    Method: "DELETE",
     Params,
     EndPoint,
     NeedToken,
   });
 };
-// For FORMDATA....
 const POST_FORMDATA = async ({ EndPoint, Params, NeedToken }) => {
   return await REQUEST({
-    Method: 'POST',
+    Method: "POST",
     IsformData: true,
     Params,
     EndPoint,
@@ -41,7 +40,7 @@ const POST_FORMDATA = async ({ EndPoint, Params, NeedToken }) => {
 };
 const PUT_FORMDATA = async ({ EndPoint, Params, NeedToken }) => {
   return await REQUEST({
-    Method: 'PUT',
+    Method: "PUT",
     IsformData: true,
     Params,
     EndPoint,

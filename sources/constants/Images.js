@@ -2,6 +2,7 @@ const ImagePath = "../assets/images/";
 const png = ".png";
 
 const Images = {
+  Back: require(ImagePath + "Back" + png),
   Eye: require(ImagePath + "eye" + png),
   Eyeoff: require(ImagePath + "eyeoff" + png),
   Frame: require(ImagePath + "Frame" + png),

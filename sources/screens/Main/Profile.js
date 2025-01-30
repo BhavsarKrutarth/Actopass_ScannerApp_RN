@@ -1,12 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { RNContainer, RNHeader } from '../../common';
 
 const Profile = () => {
   return (
-    <View>
-      <Text>Profile</Text>
-    </View>
-  )
+    <RNContainer>
+      <RNHeader />
+    </RNContainer>
+  );
 }
 
 export default Profile

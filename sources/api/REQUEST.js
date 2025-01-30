@@ -1,4 +1,7 @@
 import { Functions } from "../utils";
+
+import Axios from "axios";
+
 import URL from "./URL";
 
 const REQUEST = async ({
@@ -19,15 +22,20 @@ const REQUEST = async ({
   // console.log('options -> ', JSON.stringify(options, null, 2));
   // const response = await Axios(options);
   // return response.data;
-
-  // fetch method......
-  const responseJson = await fetch(options.url, {
-    method: Method,
-    body: JSON.stringify(Params),
-    headers: Headers,
-  });
-  const response = await responseJson?.json();
-  // console.log('response -> ', JSON.stringify(response, null, 2));
+  const response = await Axios(options)
+    .then((response) => {
+      // console.log('response 123 ::', response.data);
+      return response.data;
+    })
+    .catch((error) => {
+      // console.log('error 123 ::', error?.response);
+      throw error?.response?.data?.title
+        ? {
+            msg: error?.response?.data?.title,
+            status: error?.response?.data?.status,
+          }
+        : error?.message;
+    });
   return response;
 };
 const Header = (NeedToken, Token, IsformData) => {

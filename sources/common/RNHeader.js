@@ -1,79 +1,60 @@
-import React from 'react';
-import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { Colors, FontFamily, FontSize, hp, isIOS, wp } from "../theme";
-import RNText from './RNText';
-import RNStyles from './RNStyles';
+import {
+  Image,
+  SafeAreaView,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
+import React from "react";
+import { FontFamily, FontSize, wp } from "../theme";
+import RNText from "./RNText";
+import { Images } from "../constants";
+import { useNavigation } from "@react-navigation/native";
+import RNStyles from "./RNStyles";
+import { useThemeColors } from "../theme/ThemeColors";
 
-const RNHeader = ({
-  title,
-  onLeftPress,
-  LeftIcon,
-  onRightPress,
-  RightIcon,
-  containerStyle,
-  titleStyle,
-}) => {
+const RNHeader = ({ title, style }) => {
   const navigation = useNavigation();
+  const Colors = useThemeColors();
   return (
-    <View style={[styles.Container, containerStyle]}>
-      {LeftIcon ? (
-        <TouchableOpacity
-          onPress={() => (onLeftPress ? onLeftPress?.() : navigation.goBack())}
-          style={styles.Left}>
-          <Image
-            source={LeftIcon}
-            resizeMode={'contain'}
-            style={RNStyles.image90}
-          />
-        </TouchableOpacity>
-      ) : (
-        <View style={styles.Left} />
-      )}
-      <RNText style={[styles.title, titleStyle]}>{title}</RNText>
-      {RightIcon ? (
-        <TouchableOpacity onPress={onRightPress} style={styles.Right}>
-          <Image
-            source={RightIcon}
-            resizeMode={'contain'}
-            style={RNStyles.image90}
-          />
-        </TouchableOpacity>
-      ) : (
-        <View style={styles.Right} />
-      )}
-    </View>
+    <SafeAreaView
+      style={[
+        { ...RNStyles.flexRowBetween, backgroundColor: Colors.White },
+        style,
+      ]}
+    >
+      <TouchableOpacity
+        style={{ padding: wp(6) }}
+        onPress={() => navigation.goBack()}
+      >
+        <Image
+          source={Images.Back}
+          style={{
+            width: wp(5.5),
+            height: wp(5.5),
+            resizeMode: "contain",
+            tintColor: Colors.Black,
+          }}
+        />
+      </TouchableOpacity>
+      <RNText
+        size={FontSize.font16}
+        family={FontFamily.Medium}
+        color={Colors.Black}
+      >
+        {title}
+      </RNText>
+      <TouchableOpacity style={{ padding: wp(6) }}>
+        <Image
+          source={null}
+          style={{ width: wp(3), height: wp(3), resizeMode: "contain" }}
+        />
+      </TouchableOpacity>
+    </SafeAreaView>
   );
 };
 
-const styles = StyleSheet.create({
-  Container: {
-    ...RNStyles.flexRowBetween,
-    backgroundColor: Colors.White,
-    paddingVertical: hp(1.5),
-    paddingHorizontal: wp(3),
-    paddingTop: isIOS ? hp(6) : hp(1.5),
-    borderBottomWidth: 1,
-    borderBottomColor: Colors.Placeholder,
-  },
-  Left: {
-    ...RNStyles.center,
-    width: wp(6),
-    height: wp(6),
-  },
-  title: {
-    flex: 1,
-    textAlign: 'center',
-    paddingHorizontal: hp(1),
-    marginHorizontal: hp(1),
-    fontSize: FontSize.font18,
-    fontFamily: FontFamily.SemiBold,
-  },
-  Right: {
-    ...RNStyles.center,
-    width: wp(6),
-    height: wp(6),
-  },
-});
-
 export default RNHeader;
+
+const styles = StyleSheet.create({
+  headerContainer: {},
+});

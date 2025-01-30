@@ -14,7 +14,7 @@ const Index = () => {
         drawerStyle: { backgroundColor: "#f5f5f5" },
       }}
     >
-      <Drawer.Screen name="Scan" component={Scan} />
+      <Drawer.Screen name="Scanner" component={Scan} />
       <Drawer.Screen name="History" component={History} />
       <Drawer.Screen name="Profile" component={Profile} />
     </Drawer.Navigator>
