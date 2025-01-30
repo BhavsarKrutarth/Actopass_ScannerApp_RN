@@ -10,7 +10,7 @@ const Index = () => {
     <Drawer.Navigator
       drawerContent={(props) => <DrawerContent {...props} />}
       screenOptions={{
-        headerShown: true,
+        headerShown: false,
         drawerStyle: { backgroundColor: "#f5f5f5" },
       }}
     >
