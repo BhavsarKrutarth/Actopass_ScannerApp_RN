@@ -45,7 +45,11 @@ const Profile = () => {
 
   return (
     <RNContainer>
-      <RNHeader />
+      <RNHeader
+        Onleftpress={() => navigation.goBack()}
+        leftimagestyle={{ tintColor: Colors.Black }}
+        LeftImage={Images.Back}
+      />
       {isLoading ? (
         <View style={{ gap: hp(6) }}>
           <View style={{ ...RNStyles.center, gap: hp(1), paddingTop: hp(3) }}>

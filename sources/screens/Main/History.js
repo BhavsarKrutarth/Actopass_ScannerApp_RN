@@ -23,7 +23,11 @@ const History = () => {
 
   return (
     <RNContainer>
-      <RNHeader title={"History"} />
+      <RNHeader
+        leftimagestyle={{ tintColor: Colors.Black }}
+        LeftImage={Images.Back}
+        title={"History"}
+      />
       {data.length === 0 ? (
         <RNImage
           source={Images.Nodata}
