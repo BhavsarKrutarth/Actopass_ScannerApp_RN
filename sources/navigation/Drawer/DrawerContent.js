@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, TouchableOpacity, StyleSheet, SafeAreaView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Images } from "../../constants";
@@ -8,13 +8,27 @@ import { useDispatch, useSelector } from "react-redux";
 import { useThemeColors } from "../../theme/ThemeColors";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { onAuthChange } from "../../redux/Reducers/AuthReducers";
+import { userProfile } from "../../api/Api";
 
 const DrawerContent = () => {
   const Colors = useThemeColors();
-  const [selectedPage, setSelectedPage] = useState("Scanner");
   const navigation = useNavigation();
   const dispatch = useDispatch();
-  
+  const [selectedPage, setSelectedPage] = useState("Scanner");
+  const [data, setData] = useState("Scanner");
+  const { AsyncValue } = useSelector((state) => state.Auth);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await userProfile(AsyncValue.ScannerLoginId);
+        console.log("response", response);
+        setData(response[0]);
+      } catch (error) {}
+    };
+    fetchData();
+  }, []);
+
   const handleLogout = () => {
     AsyncStorage.clear();
     dispatch(onAuthChange(false));
@@ -49,7 +63,7 @@ const DrawerContent = () => {
           </View>
           <View style={styles(Colors).profileSection}>
             <RNImage
-              source={require("../../assets/images/user.jpeg")}
+              source={{ uri: data.PhotoPath }}
               resizeMode={"cover"}
               style={{
                 width: wp(12),
@@ -59,13 +73,13 @@ const DrawerContent = () => {
             />
             <View style={{ gap: hp(0.5) }}>
               <RNText
-                children={"name"}
+                children={data.Code}
                 size={FontSize.font12}
                 color={"#FFF"}
                 family={FontFamily.Regular}
               />
               <RNText
-                children={"surat"}
+                children={data.Name}
                 size={FontSize.font18}
                 color={"#FFF"}
                 family={FontFamily.SemiBold}
@@ -137,7 +151,7 @@ const styles = (Colors) =>
       borderColor: "#C997FC",
       paddingVertical: hp(1),
     },
-    profileSection: { ...RNStyles.flexRow, gap: wp(2), padding: wp(3) },
+    profileSection: { ...RNStyles.flexRow, gap: wp(3), padding: wp(3) },
     navLinks: {
       paddingHorizontal: wp(3),
       gap: hp(2),

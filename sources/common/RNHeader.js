@@ -12,7 +12,14 @@ import { useNavigation } from "@react-navigation/native";
 import RNStyles from "./RNStyles";
 import { useThemeColors } from "../theme/ThemeColors";
 
-const RNHeader = ({ title, style,Touch,LeftImage,Onleftpress,leftimagestyle }) => {
+const RNHeader = ({
+  title,
+  style,
+  Touch,
+  LeftImage,
+  Onleftpress,
+  leftimagestyle,
+}) => {
   const navigation = useNavigation();
   const Colors = useThemeColors();
   return (
@@ -23,17 +30,25 @@ const RNHeader = ({ title, style,Touch,LeftImage,Onleftpress,leftimagestyle }) =
       ]}
     >
       <TouchableOpacity
-        style={[Touch,{padding: wp(6)}]}
-        onPress={Onleftpress}
+        style={[Touch, { padding: wp(6) }]}
+        onPress={() => {
+          navigation.goBack();
+          if (typeof Onleftpress === "function") {
+            Onleftpress();
+          }
+        }}
       >
         <Image
           source={LeftImage}
-          style={[leftimagestyle,{
-            width: wp(5),
-            height: wp(5),
-            resizeMode: "contain",
-            tintColor: Colors.Black,
-          }]}
+          style={[
+            leftimagestyle,
+            {
+              width: wp(5),
+              height: wp(5),
+              resizeMode: "contain",
+              tintColor: Colors.Black,
+            },
+          ]}
         />
       </TouchableOpacity>
       <RNText
