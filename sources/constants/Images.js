@@ -2,8 +2,12 @@ const ImagePath = "../assets/images/";
 const png = ".png";
 
 const Images = {
+  ActoscriptLogo: require(ImagePath + "ActoscriptLogo" + png),
   Back: require(ImagePath + "Back" + png),
   Call: require(ImagePath + "call" + png),
+  cross: require(ImagePath + "cross" + png),
+  close: require(ImagePath + "close" + png),
+  checkmark: require(ImagePath + "checkmark" + png),
   Eye: require(ImagePath + "eye" + png),
   Eyeoff: require(ImagePath + "eyeoff" + png),
   User: require(ImagePath + "user" + png),
@@ -15,7 +19,6 @@ const Images = {
   Scan: require(ImagePath + "scan" + png),
   Signout: require(ImagePath + "signout" + png),
   Profile: require(ImagePath + "profile" + png),
-  drawer: require(ImagePath + "drawer" + png)
 };
 
 export default Images;

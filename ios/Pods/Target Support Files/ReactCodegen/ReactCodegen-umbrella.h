@@ -12,6 +12,12 @@
 
 #import "RCTModulesConformingToProtocolsProvider.h"
 #import "RCTThirdPartyComponentsProvider.h"
+#import "react/renderer/components/rnblurview/ComponentDescriptors.h"
+#import "react/renderer/components/rnblurview/EventEmitters.h"
+#import "react/renderer/components/rnblurview/Props.h"
+#import "react/renderer/components/rnblurview/RCTComponentViewHelpers.h"
+#import "react/renderer/components/rnblurview/ShadowNodes.h"
+#import "react/renderer/components/rnblurview/States.h"
 #import "react/renderer/components/rngesturehandler_codegen/ComponentDescriptors.h"
 #import "react/renderer/components/rngesturehandler_codegen/EventEmitters.h"
 #import "react/renderer/components/rngesturehandler_codegen/Props.h"
@@ -38,6 +44,8 @@
 #import "rnreanimatedJSI.h"
 #import "rnscreens/rnscreens.h"
 #import "rnscreensJSI.h"
+#import "RNVectorIconsSpec/RNVectorIconsSpec.h"
+#import "RNVectorIconsSpecJSI.h"
 #import "safeareacontext/safeareacontext.h"
 #import "safeareacontextJSI.h"
 

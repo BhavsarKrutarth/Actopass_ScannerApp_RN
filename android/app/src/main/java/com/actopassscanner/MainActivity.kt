@@ -1,4 +1,4 @@
-package com.actopassscanner
+package com.fastticket.scanner
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

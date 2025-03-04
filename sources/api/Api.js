@@ -1,6 +1,8 @@
 import FetchMethod from "./FetchMethod";
 
 export const loginUser = async (Id, Password) => {
+  console.log(Id, Password);
+
   try {
     const response = await FetchMethod.POST({
       EndPoint: "Scanner",
@@ -11,7 +13,6 @@ export const loginUser = async (Id, Password) => {
     });
     return response;
   } catch (error) {
-    console.log("Login API Error:", error);
     throw error;
   }
 };
@@ -40,6 +41,12 @@ export const ScannedTicket = async (
   TotalSacnnerTicketQty
 ) => {
   try {
+    console.log("log of data", {
+      BookTicketDeatils: BookTicketDeatils,
+      ScannerLoginId: ScannerLoginId,
+      TotalSacnnerTicketQty: TotalSacnnerTicketQty,
+    });
+
     const response = await FetchMethod.POST({
       EndPoint: `SacnneTicket/confirm-ticket`,
       Params: {
@@ -51,7 +58,7 @@ export const ScannedTicket = async (
     });
     return response;
   } catch (error) {
-    console.log("Login API Error:", error);
+    console.log("ticket API Error:", error);
     throw error;
   }
 };
@@ -77,7 +84,6 @@ export const HistoryData = async (ScannerLoginId) => {
     });
     return response;
   } catch (error) {
-    console.log("Login API Error:", error);
     throw error;
   }
 };
