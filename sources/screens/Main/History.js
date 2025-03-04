@@ -7,15 +7,15 @@ import { FontFamily, FontSize, hp, normalize, wp } from "../../theme";
 import { useSelector } from "react-redux";
 import { Images } from "../../constants";
 
-const History = () => {
+const History = ({ navigation }) => {
   const [data, setData] = useState([]);
   const Colors = useThemeColors();
   const { AsyncValue } = useSelector((state) => state.Auth);
+  console.log(AsyncValue.ScannerLoginId);
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await HistoryData(AsyncValue.ScannerLoginId);
-      console.log("response", response);
       setData(response);
     };
     fetchData();
@@ -36,6 +36,7 @@ const History = () => {
             width: wp(40),
             height: wp(40),
             alignSelf: "center",
+            backgroundColor: Colors.White,
           }}
         />
       ) : (

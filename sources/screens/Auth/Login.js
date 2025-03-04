@@ -1,8 +1,15 @@
 import { Image, Platform, StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
-import { RNButton, RNContainer, RNInput, RNText } from "../../common";
+import {
+  RNButton,
+  RNContainer,
+  RNImage,
+  RNInput,
+  RNLoader,
+  RNText,
+} from "../../common";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import { Colors, FontFamily, FontSize, hp, wp } from "../../theme";
+import { FontFamily, FontSize, hp, wp } from "../../theme";
 import { Images } from "../../constants";
 import { loginUser } from "../../api/Api";
 import { useDispatch } from "react-redux";
@@ -10,28 +17,50 @@ import {
   onAuthChange,
   setAsyncStorageValue,
 } from "../../redux/Reducers/AuthReducers";
-import { Functions } from "../../utils";
+import { Functions, Validation } from "../../utils";
+import { useThemeColors } from "../../theme/ThemeColors";
 
 const Login = () => {
+  const Colors = useThemeColors();
   const [Input, setInput] = useState({
-    Id: "SCL-0001",
-    Password: "96CE8347",
+    Id: "SCL-0047",
+    Password: "8BB8F240",
   });
   const [toggle, settoggle] = useState(true);
+  const [isLoading, setLoading] = useState(false);
+  const [isError, setError] = useState("");
+  const [Fieldvalidation, setfieldvalidation] = useState(false);
   const dispatch = useDispatch();
 
+  const Idvalidation = Fieldvalidation && Input.Id.trim("");
+  const Passwordvalidation =
+    Fieldvalidation && Validation.isPasswordValid(Input.Password);
+
   const handleLogin = async () => {
+    setLoading(true);
     try {
       const response = await loginUser(Input.Id, Input.Password);
       if (response) {
+        setError("");
         await Functions.setUserData(response);
         dispatch(onAuthChange(true));
         dispatch(setAsyncStorageValue(response));
       }
     } catch (error) {
-      console.log("error", error);
+      setError("Id or password not match.");
+    } finally {
+      setLoading(false);
     }
   };
+
+  if (isLoading)
+    return (
+      <RNLoader
+        visible={isLoading}
+        style={{ backgroundColor: Colors.White }}
+        color={Colors.Black}
+      />
+    );
 
   return (
     <RNContainer>
@@ -41,15 +70,20 @@ const Login = () => {
         contentContainerStyle={{ flexGrow: 1, paddingHorizontal: wp(4) }}
         enableAutomaticScroll={Platform.OS === "ios"}
       >
-        <View style={style.flex1}>
-          <View style={style.imageview}>
-            <Image source={Images.User} style={style.manimage} />
+        <View style={style(Colors).flex1}>
+          <View style={style(Colors).imageview}>
+            <RNImage
+              tintColor={Colors.Black}
+              source={Images.Lock}
+              style={{ height: wp(8), width: wp(8) }}
+            />
           </View>
-          <View style={style.textview}>
+          <View style={{ marginTop: hp(2.5), alignItems: "center" }}>
             <RNText
               children="LOGIN"
               size={FontSize.font22}
               family={FontFamily.SemiBold}
+              color={Colors.Black}
             />
             <RNText
               children="Add your some profile details"
@@ -60,13 +94,19 @@ const Login = () => {
             />
           </View>
         </View>
-        <View style={style.flex2}>
+        <View style={style(Colors).flex2}>
           <View>
             <RNInput
               Containerstyle={{
-                borderColor: Colors.lable,
+                borderBottomWidth: 2,
+                borderColor: Colors.Grey,
+              }}
+              Tinewstyle={{
+                color: Colors.Black,
+                fontFamily: FontFamily.Medium,
               }}
               Lefticon={Images.User}
+              tintColor={Colors.Black}
               Tiheight={50}
               Tipadding={10}
               Tiplaceholder="Enter Username"
@@ -78,8 +118,14 @@ const Login = () => {
           <View>
             <RNInput
               Containerstyle={{
-                borderColor: Colors.lable,
+                borderBottomWidth: 2,
+                borderColor: Colors.Grey,
               }}
+              Tinewstyle={{
+                color: Colors.Black,
+                fontFamily: FontFamily.Medium,
+              }}
+              tintColor={Colors.Black}
               Lefticon={Images.Lock}
               Righticon={toggle ? Images.Eyeoff : Images.Eye}
               Tiheight={50}
@@ -93,17 +139,25 @@ const Login = () => {
               securetextentry={toggle}
               onPress={() => settoggle(!toggle)}
             />
+            {isError && (
+              <RNText
+                children={isError}
+                color={Colors.Red}
+                size={FontSize.font11}
+                pTop={hp(1)}
+              />
+            )}
           </View>
         </View>
-        <View style={style.flex3}>
+        <View style={{ flex: 1, justifyContent: "center" }}>
           <RNButton
             onPress={() => handleLogin()}
             style={{
               marginHorizontal: wp(0),
               backgroundColor: Colors.Purple,
               borderRadius: wp(2),
-              marginVertical: hp(0),
             }}
+            textStyle={{ fontFamily: FontFamily.Medium }}
             title={"Login"}
           ></RNButton>
         </View>
@@ -114,72 +168,50 @@ const Login = () => {
 
 export default Login;
 
-const style = StyleSheet.create({
-  scrollviewstyle: {
-    flexGrow: 1,
-    // paddingLeft: 13,
-    // paddingRight: 13,
-    // backgroundColor:"red",
-    paddingHorizontal: wp(4),
-  },
-  flex1: {
-    flex: 1.3,
-    justifyContent: "flex-end",
-    alignItems: "center",
-    paddingBottom: hp(2),
-    // backgroundColor: "pink",
-  },
-  imageview: {
-    backgroundColor: Colors.LightGrey,
-    justifyContent: "center",
-    alignItems: "center",
-    height: hp(10),
-    width: hp(10),
-    borderRadius: hp(10),
-  },
-  manimage: {
-    height: wp(10),
-    width: wp(10),
-  },
-  textview: {
-    marginTop: hp(2.5),
-    alignItems: "center",
-  },
-  flex2: {
-    flex: 1.5,
-    justifyContent: "center",
-    rowGap: hp(2),
-    // backgroundColor: "red",
-  },
-  textinput: {
-    hpght: 40,
-    borderwpth: 1,
-    padding: 10,
-    borderRadius: 5,
-    marginLeft: wp(2),
-    marginRight: wp(2),
-  },
-
-  flex3: {
-    flex: 1,
-    // backgroundColor: "blue",
-    justifyContent: "center",
-  },
-  buttontext: {
-    color: Colors.White,
-    fontFamily: FontFamily.Medium,
-    fontSize: FontSize.font16,
-  },
-  seperator: {
-    justifyContent: "space-between",
-    flexDirection: "row",
-    paddingHorizontal: wp(1.7),
-    alignItems: "center",
-    columnGap: wp(4),
-  },
-  line: {
-    borderColor: Colors.bordercolor,
-    borderwpth: 1,
-    flex: 1,
-  },
-});
+const style = (Colors) =>
+  StyleSheet.create({
+    flex1: {
+      flex: 1.3,
+      justifyContent: "flex-end",
+      alignItems: "center",
+      paddingBottom: hp(2),
+    },
+    imageview: {
+      backgroundColor: Colors.Grey,
+      justifyContent: "center",
+      alignItems: "center",
+      height: hp(10),
+      width: hp(10),
+      borderRadius: hp(10),
+    },
+    flex2: {
+      flex: 1.5,
+      justifyContent: "center",
+      rowGap: hp(2),
+    },
+    textinput: {
+      hpght: 40,
+      borderwpth: 1,
+      padding: 10,
+      borderRadius: 5,
+      marginLeft: wp(2),
+      marginRight: wp(2),
+    },
+    buttontext: {
+      color: Colors.White,
+      fontFamily: FontFamily.Medium,
+      fontSize: FontSize.font16,
+    },
+    seperator: {
+      justifyContent: "space-between",
+      flexDirection: "row",
+      paddingHorizontal: wp(1.7),
+      alignItems: "center",
+      columnGap: wp(4),
+    },
+    line: {
+      borderColor: Colors.bordercolor,
+      borderwpth: 1,
+      flex: 1,
+    },
+  });

@@ -15,7 +15,8 @@ const LightTheme = {
   Purple: "#942FFA",
   Primary: "#0275d8",
   Placeholder: "#9A9A9A",
-  imagecolor:"#202020"
+  Loading: "#f1f1f1",
+  modal: "rgba(0, 0, 0, 0.5)",
 };
 
 const DarkTheme = {
@@ -33,7 +34,8 @@ const DarkTheme = {
   Purple: "#942FFA",
   Primary: "#1E90FF",
   Placeholder: "#B0B0B0",
-  imagecolor:"#888888"
+  Loading: "#404040",
+  modal: "rgba(255, 255, 255, 0.2)",
 };
 
 export const useThemeColors = () => {

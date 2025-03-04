@@ -11,6 +11,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		179027F450EC4141863E4D41 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBDB32FD04164AB3A04117C2 /* Poppins-Black.ttf */; };
 		24FBB2BB892E470D96DEAD42 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 513BAE29B4664293BA195401 /* Poppins-Thin.ttf */; };
+		3B802B9546F69E2DD22E678A /* libPods-ActopassScanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 255AC3EDF672D654D7EE0D65 /* libPods-ActopassScanner.a */; };
 		3EDF8CA4AC7948F1A62966C9 /* LexendDeca-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F37F0DECE4CD472FA484B24F /* LexendDeca-Bold.ttf */; };
 		4894104EF2A0483A94D6CC31 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 950299E44F7A4B44B8323FCE /* Poppins-Medium.ttf */; };
 		628F7D81C52547F2B9EEAB7E /* LexendDeca-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47333BA433474B94BD3AD790 /* LexendDeca-Thin.ttf */; };
@@ -22,7 +23,6 @@
 		8C5D9D3817F446A39CF17A94 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F57155B6732F4D4E8F326A6D /* Poppins-SemiBold.ttf */; };
 		8F0BFF4EDAF54ADDB59DDA7A /* LexendDeca-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C3DF7CCF6164D32B9F35895 /* LexendDeca-Regular.ttf */; };
 		9014647D3BF1E396F554ED5F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
-		99353770B703DDF807FA0F9A /* libPods-ActopassScanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA9DF79B554EE19D29AA624 /* libPods-ActopassScanner.a */; };
 		AF7B53FBDF194D6C9B3649DC /* LexendDeca-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4D890F8BFA94A19A51409EB /* LexendDeca-Medium.ttf */; };
 		B0373BA832CD4E71B433166B /* LexendDeca-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F62154039A464C2A90F3DC4E /* LexendDeca-ExtraLight.ttf */; };
 		BC5B4A7D6D404522A47C89E8 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FFF063C53ED4F00B31B450C /* Poppins-Regular.ttf */; };
@@ -34,35 +34,35 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		06E7C8318D604C46B79825B6 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraLight.ttf"; path = "../sources/assets/fonts/Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		06E7C8318D604C46B79825B6 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraLight.ttf"; path = "../sources/assets/fonts/Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* ActopassScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActopassScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ActopassScanner/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ActopassScanner/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = ActopassScanner/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		293C8ED23BAA4F85959FD318 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraBold.ttf"; path = "../sources/assets/fonts/Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
-		393A7B045531449C9EA4E678 /* LexendDeca-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LexendDeca-SemiBold.ttf"; path = "../sources/assets/fonts/LexendDeca-SemiBold.ttf"; sourceTree = "<group>"; };
-		39711C8AAA174DC386F66B0E /* Poppins-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Bold.ttf"; path = "../sources/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
-		3FFF063C53ED4F00B31B450C /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../sources/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
-		47333BA433474B94BD3AD790 /* LexendDeca-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LexendDeca-Thin.ttf"; path = "../sources/assets/fonts/LexendDeca-Thin.ttf"; sourceTree = "<group>"; };
-		513BAE29B4664293BA195401 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Thin.ttf"; path = "../sources/assets/fonts/Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		255AC3EDF672D654D7EE0D65 /* libPods-ActopassScanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ActopassScanner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		293C8ED23BAA4F85959FD318 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraBold.ttf"; path = "../sources/assets/fonts/Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		393A7B045531449C9EA4E678 /* LexendDeca-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LexendDeca-SemiBold.ttf"; path = "../sources/assets/fonts/LexendDeca-SemiBold.ttf"; sourceTree = "<group>"; };
+		39711C8AAA174DC386F66B0E /* Poppins-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Bold.ttf"; path = "../sources/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		3FFF063C53ED4F00B31B450C /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../sources/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		47333BA433474B94BD3AD790 /* LexendDeca-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LexendDeca-Thin.ttf"; path = "../sources/assets/fonts/LexendDeca-Thin.ttf"; sourceTree = "<group>"; };
+		513BAE29B4664293BA195401 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Thin.ttf"; path = "../sources/assets/fonts/Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		7587339DC1E53BF7BC5BDCE7 /* Pods-ActopassScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActopassScanner.debug.xcconfig"; path = "Target Support Files/Pods-ActopassScanner/Pods-ActopassScanner.debug.xcconfig"; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ActopassScanner/AppDelegate.swift; sourceTree = "<group>"; };
-		7726F7911BC94E2B84D387FB /* Poppins-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Light.ttf"; path = "../sources/assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; };
-		7C2B385CB05085F3C2B61375 /* Pods-ActopassScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActopassScanner.release.xcconfig"; path = "Target Support Files/Pods-ActopassScanner/Pods-ActopassScanner.release.xcconfig"; sourceTree = "<group>"; };
-		7FD8218A197346FFAA4E1BC4 /* LexendDeca-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LexendDeca-Black.ttf"; path = "../sources/assets/fonts/LexendDeca-Black.ttf"; sourceTree = "<group>"; };
+		7726F7911BC94E2B84D387FB /* Poppins-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Light.ttf"; path = "../sources/assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; };
+		7FD8218A197346FFAA4E1BC4 /* LexendDeca-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LexendDeca-Black.ttf"; path = "../sources/assets/fonts/LexendDeca-Black.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ActopassScanner/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8C3DF7CCF6164D32B9F35895 /* LexendDeca-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LexendDeca-Regular.ttf"; path = "../sources/assets/fonts/LexendDeca-Regular.ttf"; sourceTree = "<group>"; };
-		950299E44F7A4B44B8323FCE /* Poppins-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Medium.ttf"; path = "../sources/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
-		B672158D239E4A45ACA4E2B6 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Italic.ttf"; path = "../sources/assets/fonts/Poppins-Italic.ttf"; sourceTree = "<group>"; };
-		BAA9DF79B554EE19D29AA624 /* libPods-ActopassScanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ActopassScanner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DBDB32FD04164AB3A04117C2 /* Poppins-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Black.ttf"; path = "../sources/assets/fonts/Poppins-Black.ttf"; sourceTree = "<group>"; };
-		E4D890F8BFA94A19A51409EB /* LexendDeca-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LexendDeca-Medium.ttf"; path = "../sources/assets/fonts/LexendDeca-Medium.ttf"; sourceTree = "<group>"; };
+		8C3DF7CCF6164D32B9F35895 /* LexendDeca-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LexendDeca-Regular.ttf"; path = "../sources/assets/fonts/LexendDeca-Regular.ttf"; sourceTree = "<group>"; };
+		950299E44F7A4B44B8323FCE /* Poppins-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Medium.ttf"; path = "../sources/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		B672158D239E4A45ACA4E2B6 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Italic.ttf"; path = "../sources/assets/fonts/Poppins-Italic.ttf"; sourceTree = "<group>"; };
+		BCE0FADDDBB01C1F8139C963 /* Pods-ActopassScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActopassScanner.release.xcconfig"; path = "Target Support Files/Pods-ActopassScanner/Pods-ActopassScanner.release.xcconfig"; sourceTree = "<group>"; };
+		DBDB32FD04164AB3A04117C2 /* Poppins-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Black.ttf"; path = "../sources/assets/fonts/Poppins-Black.ttf"; sourceTree = "<group>"; };
+		E4D890F8BFA94A19A51409EB /* LexendDeca-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LexendDeca-Medium.ttf"; path = "../sources/assets/fonts/LexendDeca-Medium.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F37F0DECE4CD472FA484B24F /* LexendDeca-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LexendDeca-Bold.ttf"; path = "../sources/assets/fonts/LexendDeca-Bold.ttf"; sourceTree = "<group>"; };
-		F447EBE7724E4011A769FBC5 /* LexendDeca-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LexendDeca-Light.ttf"; path = "../sources/assets/fonts/LexendDeca-Light.ttf"; sourceTree = "<group>"; };
-		F57155B6732F4D4E8F326A6D /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../sources/assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
-		F62154039A464C2A90F3DC4E /* LexendDeca-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LexendDeca-ExtraLight.ttf"; path = "../sources/assets/fonts/LexendDeca-ExtraLight.ttf"; sourceTree = "<group>"; };
-		FCFB0A9C248241139AF11B1C /* LexendDeca-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LexendDeca-ExtraBold.ttf"; path = "../sources/assets/fonts/LexendDeca-ExtraBold.ttf"; sourceTree = "<group>"; };
-		FE36E2AF41457A5023B8E3B9 /* Pods-ActopassScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActopassScanner.debug.xcconfig"; path = "Target Support Files/Pods-ActopassScanner/Pods-ActopassScanner.debug.xcconfig"; sourceTree = "<group>"; };
+		F37F0DECE4CD472FA484B24F /* LexendDeca-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LexendDeca-Bold.ttf"; path = "../sources/assets/fonts/LexendDeca-Bold.ttf"; sourceTree = "<group>"; };
+		F447EBE7724E4011A769FBC5 /* LexendDeca-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LexendDeca-Light.ttf"; path = "../sources/assets/fonts/LexendDeca-Light.ttf"; sourceTree = "<group>"; };
+		F57155B6732F4D4E8F326A6D /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../sources/assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		F62154039A464C2A90F3DC4E /* LexendDeca-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LexendDeca-ExtraLight.ttf"; path = "../sources/assets/fonts/LexendDeca-ExtraLight.ttf"; sourceTree = "<group>"; };
+		FCFB0A9C248241139AF11B1C /* LexendDeca-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LexendDeca-ExtraBold.ttf"; path = "../sources/assets/fonts/LexendDeca-ExtraBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99353770B703DDF807FA0F9A /* libPods-ActopassScanner.a in Frameworks */,
+				3B802B9546F69E2DD22E678A /* libPods-ActopassScanner.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				BAA9DF79B554EE19D29AA624 /* libPods-ActopassScanner.a */,
+				255AC3EDF672D654D7EE0D65 /* libPods-ActopassScanner.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -122,7 +122,6 @@
 				47333BA433474B94BD3AD790 /* LexendDeca-Thin.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -158,8 +157,8 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FE36E2AF41457A5023B8E3B9 /* Pods-ActopassScanner.debug.xcconfig */,
-				7C2B385CB05085F3C2B61375 /* Pods-ActopassScanner.release.xcconfig */,
+				7587339DC1E53BF7BC5BDCE7 /* Pods-ActopassScanner.debug.xcconfig */,
+				BCE0FADDDBB01C1F8139C963 /* Pods-ActopassScanner.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -171,13 +170,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ActopassScanner" */;
 			buildPhases = (
-				DE1DC46356B6A44A2797385F /* [CP] Check Pods Manifest.lock */,
+				3C007E3438D9CDA60CDB1CAA /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				0AEC0C18F8B2A39D43D6E2ED /* [CP] Embed Pods Frameworks */,
-				893B0845B54F06F50C5AA16A /* [CP] Copy Pods Resources */,
+				1EBD4575096A89A627D2CDE2 /* [CP] Embed Pods Frameworks */,
+				6B406C6461870140A0344290 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,7 +267,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		0AEC0C18F8B2A39D43D6E2ED /* [CP] Embed Pods Frameworks */ = {
+		1EBD4575096A89A627D2CDE2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -285,24 +284,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ActopassScanner/Pods-ActopassScanner-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		893B0845B54F06F50C5AA16A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ActopassScanner/Pods-ActopassScanner-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ActopassScanner/Pods-ActopassScanner-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ActopassScanner/Pods-ActopassScanner-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DE1DC46356B6A44A2797385F /* [CP] Check Pods Manifest.lock */ = {
+		3C007E3438D9CDA60CDB1CAA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -324,6 +306,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6B406C6461870140A0344290 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ActopassScanner/Pods-ActopassScanner-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ActopassScanner/Pods-ActopassScanner-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ActopassScanner/Pods-ActopassScanner-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -340,13 +339,16 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE36E2AF41457A5023B8E3B9 /* Pods-ActopassScanner.debug.xcconfig */;
+			baseConfigurationReference = 7587339DC1E53BF7BC5BDCE7 /* Pods-ActopassScanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QMKM2SZY9W;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ActopassScanner/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Fastticket Scanner";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -358,7 +360,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fastticket.scanner;
 				PRODUCT_NAME = ActopassScanner;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -368,12 +370,15 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C2B385CB05085F3C2B61375 /* Pods-ActopassScanner.release.xcconfig */;
+			baseConfigurationReference = BCE0FADDDBB01C1F8139C963 /* Pods-ActopassScanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QMKM2SZY9W;
 				INFOPLIST_FILE = ActopassScanner/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Fastticket Scanner";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -385,7 +390,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fastticket.scanner;
 				PRODUCT_NAME = ActopassScanner;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

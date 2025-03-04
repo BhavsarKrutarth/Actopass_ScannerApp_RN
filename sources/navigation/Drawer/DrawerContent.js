@@ -9,6 +9,7 @@ import { useThemeColors } from "../../theme/ThemeColors";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { onAuthChange } from "../../redux/Reducers/AuthReducers";
 import { userProfile } from "../../api/Api";
+import LogoutModal from "../../components/LogoutModal";
 
 const DrawerContent = () => {
   const Colors = useThemeColors();
@@ -16,6 +17,8 @@ const DrawerContent = () => {
   const dispatch = useDispatch();
   const [selectedPage, setSelectedPage] = useState("Scanner");
   const [data, setData] = useState("Scanner");
+  const [modalVisible, setModalVisible] = useState(false);
+  const [isLoading, setLoading] = useState(false);
   const { AsyncValue } = useSelector((state) => state.Auth);
 
   useEffect(() => {
@@ -30,8 +33,15 @@ const DrawerContent = () => {
   }, []);
 
   const handleLogout = () => {
-    AsyncStorage.clear();
-    dispatch(onAuthChange(false));
+    setLoading(true);
+    try {
+      setModalVisible(false);
+      AsyncStorage.clear();
+      dispatch(onAuthChange(false));
+    } catch (error) {
+    } finally {
+      setLoading(false);
+    }
   };
 
   const navLinks = [
@@ -49,7 +59,7 @@ const DrawerContent = () => {
     <RNContainer style={{ gap: hp(5), backgroundColor: Colors.Grey }}>
       <View style={{ backgroundColor: Colors.Purple }}>
         <SafeAreaView style={{ gap: hp(5), margin: wp(2) }}>
-          <View style={styles(Colors).titleHeader}>
+          {/* <View style={styles(Colors).titleHeader}>
             <RNImage
               source={Images.Logo}
               style={{ width: wp(10), height: wp(10) }}
@@ -60,7 +70,7 @@ const DrawerContent = () => {
               size={FontSize.font14}
               family={FontFamily.Regular}
             />
-          </View>
+          </View> */}
           <View style={styles(Colors).profileSection}>
             <RNImage
               source={{ uri: data.PhotoPath }}
@@ -104,16 +114,10 @@ const DrawerContent = () => {
           >
             <RNImage
               source={item.icon}
-              style={[
-                styles(Colors).navIcon,
-                selectedPage === item.name && { tintColor: "#FFF" },
-              ]}
+              tintColor={selectedPage === item.name ? "#FFFFFF" : Colors.Black}
+              style={[styles(Colors).navIcon]}
             />
-            <RNText
-              size={FontSize.font17}
-              color={selectedPage === item.name ? "#FFF" : Colors.DarkGrey}
-              family={FontFamily.Medium}
-            >
+            <RNText color={selectedPage === item.name ? "#FFF" : Colors.Black}>
               {item.name}
             </RNText>
           </TouchableOpacity>
@@ -122,20 +126,20 @@ const DrawerContent = () => {
 
       <TouchableOpacity
         style={styles(Colors).logoutButton}
-        onPress={handleLogout}
+        onPress={() => setModalVisible(true)}
       >
         <RNImage
           source={Images.Signout}
-          style={[styles(Colors).navIcon, { tintColor: Colors.Black }]}
+          tintColor={Colors.Black}
+          style={[styles(Colors).navIcon]}
         />
-        <RNText
-          size={FontSize.font17}
-          color={Colors.Black}
-          family={FontFamily.Regular}
-        >
-          Sign Out
-        </RNText>
+        <RNText color={Colors.Black}>Sign Out</RNText>
       </TouchableOpacity>
+      <LogoutModal
+        isVisible={modalVisible}
+        onClose={() => setModalVisible(false)}
+        onLogout={handleLogout}
+      />
     </RNContainer>
   );
 };

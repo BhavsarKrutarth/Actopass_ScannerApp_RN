@@ -1,9 +1,11 @@
-import React, {useEffect, useRef} from 'react';
-import {View, Animated, StyleSheet} from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import React, { useEffect, useRef } from "react";
+import { View, Animated, StyleSheet } from "react-native";
+import LinearGradient from "react-native-linear-gradient";
+import { useThemeColors } from "../theme/ThemeColors";
 
-const RNSkeletonLoader = ({style}) => {
+const RNSkeletonLoader = ({ style }) => {
   const shimmerValue = useRef(new Animated.Value(-1)).current;
+  const Colors = useThemeColors();
 
   useEffect(() => {
     Animated.loop(
@@ -11,7 +13,7 @@ const RNSkeletonLoader = ({style}) => {
         toValue: 1,
         duration: 1000,
         useNativeDriver: true,
-      }),
+      })
     ).start();
   }, [shimmerValue]);
 
@@ -21,30 +23,32 @@ const RNSkeletonLoader = ({style}) => {
   });
 
   return (
-    <View style={[styles.skeleton, style]}>
+    <View style={[styles(Colors).skeleton, style]}>
       <Animated.View
         style={[
           StyleSheet.absoluteFill,
           {
-            transform: [{translateX: shimmerTranslate}],
+            transform: [{ translateX: shimmerTranslate }],
           },
-        ]}>
+        ]}
+      >
         <LinearGradient
-          colors={['#e0e0e0', '#f5f5f5', '#e0e0e0']}
-          start={{x: 0, y: 0}}
-          end={{x: 1, y: 0}}
-          style={{flex: 1}}
+          colors={[Colors.Grey, Colors.Loading, Colors.Grey]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          style={{ flex: 1 }}
         />
       </Animated.View>
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  skeleton: {
-    overflow: 'hidden',
-    backgroundColor: '#e0e0e0',
-  },
-});
+const styles = (Colors) =>
+  StyleSheet.create({
+    skeleton: {
+      overflow: "hidden",
+      backgroundColor: Colors.Grey,
+    },
+  });
 
 export default RNSkeletonLoader;

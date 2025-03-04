@@ -14,19 +14,17 @@ import { useThemeColors } from "../../theme/ThemeColors";
 import { userProfile } from "../../api/Api";
 import { useSelector } from "react-redux";
 
-const Profile = () => {
+const Profile = ({ navigation }) => {
   const Colors = useThemeColors();
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const { AsyncValue } = useSelector((state) => state.Auth);
-  console.log("AsyncValue.ScannerLoginId", AsyncValue.ScannerLoginId);
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       try {
         const response = await userProfile(AsyncValue.ScannerLoginId);
-        console.log("response", response);
         setData(response[0]);
       } catch (error) {
       } finally {
@@ -207,6 +205,7 @@ const Profile = () => {
               <View key={index}>
                 <View style={styles(Colors).profileField}>
                   <RNImage
+                    tintColor={Colors.Black}
                     source={item.icon}
                     style={styles(Colors).fieldIcon}
                   />
